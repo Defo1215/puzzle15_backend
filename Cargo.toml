@@ -1,0 +1,50 @@
+[package]
+name = "puzzle15_backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# cargo 1.71.1 (7f1d04c00 2023-07-29)
+# MySQL 5.7
+# Redis 7
+
+# HTTP 框架
+axum = { version = "0.6", features = ["headers"] }
+
+# tokio runtime
+tokio = { version = "1", features = ["full"] }
+
+# 日志
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# 自定义错误类型
+thiserror = "1.0"
+
+# 数据库连接
+sqlx = "0.7"
+sea-orm = { version = "0.12", features = ["sqlx-mysql", "runtime-tokio-native-tls", "macros", "with-chrono"] }
+
+# json 序列化和反序列化
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# 异步 trait
+async-trait = "0.1"
+
+# 发起 HTTP 请求
+reqwest = { version = "0.11", features = ["json"] }
+
+# 异步 API
+futures = "0.3"
+
+# 声明全局变量，运行期间初始化（初始化过程不能是 async）
+lazy_static = "1"
+
+# 连接 redis
+redis = { version = "0.23", features = ["tokio-comp"] }
+
+# JWT
+jsonwebtoken = "7"
